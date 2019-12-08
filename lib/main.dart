@@ -1,21 +1,8 @@
+import 'dart:io' show Platform;
 import 'package:flutter/material.dart';
 
-void main() => runApp(MyApp());
+import 'package:balta_imc/ui/ios/cupertino.app.dart';
+import 'package:balta_imc/ui/android/material.app.dart';
 
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(primarySwatch: Colors.blue),
-      home: Scaffold(
-        body: Container(
-          child: Center(
-            child: Text("IMC"),
-          ),
-        ),
-      ),
-    );
-  }
-}
+void main() =>
+    Platform.isIOS ? runApp(MyCupertinoApp()) : runApp(MyMaterialApp());
